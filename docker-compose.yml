@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  app1:
+    build: .
+    container_name: app1
+    environment:
+      - PORT=8001
+      - INSTANCE_NAME=app1
+    ports:
+      - "8001:8001"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+  app2:
+    build: .
+    container_name: app2
+    environment:
+      - PORT=8002
+      - INSTANCE_NAME=app2
+    ports:
+      - "8002:8002"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8001
+
+  app3:
+    build: .
+    container_name: app3
+    environment:
+      - PORT=8003
+      - INSTANCE_NAME=app3
+    ports:
+      - "8003:8003"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8002
