@@ -62,7 +62,7 @@ This will:
 
 - Build the FastAPI image
 - Start 3 backend containers (app1, app2, app3)
-- Start the NGINX load balancer container with configurations in app->nginx->nginx.conf
+- Start the NGINX load balancer container with configurations in app/nginx/nginx.conf
 
 ### 2. Verify NGINX is running
 
