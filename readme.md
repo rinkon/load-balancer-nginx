@@ -1,6 +1,6 @@
  NGINX Load Balancing Demo with FastAPI
 
-#### Overview
+## Overview
 
 This project demonstrates load balancing using NGINX with multiple FastAPI backend instances running in Docker.
 
@@ -10,7 +10,7 @@ A Python script is used to test and verify how requests are distributed across b
 
 ---
 
-#### Architecture
+## Architecture
 
 - 3 FastAPI application instances (app1, app2, app3)
 - NGINX reverse proxy acting as a load balancer
@@ -23,7 +23,7 @@ Client → NGINX → One of the FastAPI instances → Response returned to clien
 
 ---
 
-#### Tech Stack
+## Tech Stack
 
 - FastAPI
 - NGINX
@@ -31,7 +31,7 @@ Client → NGINX → One of the FastAPI instances → Response returned to clien
 
 ---
 
-#### Project Structure
+## Project Structure
 ```
 .
 ├── app
@@ -48,9 +48,9 @@ Client → NGINX → One of the FastAPI instances → Response returned to clien
 
 ---
 
-#### Running the Project
+## Running the Project
 
-##### 1. Build and start all services
+### 1. Build and start all services
 
 Run the following command from the project root:
 
@@ -64,7 +64,7 @@ This will:
 - Start 3 backend containers (app1, app2, app3)
 - Start the NGINX load balancer container with configurations in app->nginx->nginx.conf
 
-##### 2. Verify NGINX is running
+### 2. Verify NGINX is running
 
 Open in browser or use curl:
 ```
@@ -76,7 +76,7 @@ Expected response example:
 ```
 The server_no will vary depending on which backend instance handled the request.
 
-##### 3. Run load balancing test script
+### 3. Run load balancing test script
 Install dependency (if not already installed):
 ```
 pip install requests
@@ -85,7 +85,7 @@ Run the test:
 ```
 python scripts/load_balancer_test.py
 ```
-##### Expected Output
+### Expected Output
 ```
 Sending 300 requests to http://localhost:8080/hello...
 
